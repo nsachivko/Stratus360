@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/modal.css" />
+  <title>Home</title>
+</head>
+
+<body class="body-box">
+  <div class="outer-div">
+
+    <div class="information-bar">
+      {{#if (isEmpty data.title)}}
+      <h1 class="title">{{data.title}}</h1>
+      {{/if}}
+      <h2>DATE: {{data.month}}/{{data.day}}/{{data.year}}</h2>
+      <div class="read-box">
+         {{#if (isEmpty data.transcript)}}
+         <p class="desc">{{data.transcript}}</p>
+        {{else}}
+          <p class="desc">How would you describe this comics?</p>
+        {{/if}}
+      </div>
+    </div>
+    <div class="content-div" id="content">
+      <div class="control-div">
+        <div>
+          {{#if (isEmpty data.num)}}
+          <p>Page: {{data.num}}</p>
+          {{/if}}
+          <p>Views: {{views}}</p>
+        </div>
+        <div>
+          <button class="button-decor"><a class="arrow left" href='/?command=back'>Prev</a></button>
+          <input checked="active" class="page-number" name="page-number" id="input-box" type="text" onchange='path = "/?number=" + this.value + "&command=page";
+        location.href = path;' placeholder="page">
+          <button class="button-decor"><a class="arrow right" href='/?command=next'>Next</a></button>
+        </div>
+      </div>
+      <div>
+        <div class="css-modal-details">
+          <details>
+            <summary>
+              <img src="{{data.img}}" alt="{{data.alt}}" class="comics-photo">
+            </summary>
+            <div class="cmc">
+              <div class="cmt">
+                <img src="{{data.img}}" alt="not working" class="comics-photo-modal"
+                  onclick="this.style.width=='100%' ? (window.innerWidth > 1000 ? this.style.width='65%' : this.style.width='90%'): this.style.width='100%'">
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script src="/server.js"></script>
+  <script src="/data-service.js"></script>
+</body>
+<footer>
+
+</footer>
+
+</html>

@@ -65,7 +65,7 @@ app.get("/", async (req, res) => {
     page += 1;
     renderPage(page, res)
   } else if (req.query.command == "page") {
-    page = req.query.number
+    page = parseInt(req.query.number);
     if (page > 0) {
       renderPage(page, res)
     }

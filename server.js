@@ -65,8 +65,9 @@ app.get("/", async (req, res) => {
     page += 1;
     renderPage(page, res)
   } else if (req.query.command == "page") {
-    if (req.query.number > 0) {
-      renderPage(req.query.number, res)
+    page = req.query.number
+    if (page > 0) {
+      renderPage(page, res)
     }
   } else if (req.query.command == "random") {
     data_service.fetchCurrentCom().then((data) => {

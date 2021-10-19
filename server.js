@@ -1,3 +1,4 @@
+
 const data_service = require("./data-service.js")
 const express = require("express")
 const app = express()
@@ -58,13 +59,12 @@ hbs.registerHelper("isEmpty", function (value, comparator) {
 app.get("/", async (req, res) => {
 
   if (req.query.command == "back" && page > 1) {
-
-    renderPage(page--, res)
+    page -= 1;
+    renderPage(page, res)
   } else if (req.query.command == "next") {
-
+    page += 1;
     renderPage(page++, res)
   } else if (req.query.command == "page") {
-
     if (req.query.number > 0) {
       renderPage(req.query.number, res)
     }

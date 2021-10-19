@@ -58,12 +58,12 @@ hbs.registerHelper("isEmpty", function (value, comparator) {
 
 app.get("/", async (req, res) => {
 
-  if (req.query.command == "back" && page > 1) {
+  if (req.query.command == "back" && page != 1 && page > 0) {
     page -= 1;
     renderPage(page, res)
   } else if (req.query.command == "next") {
     page += 1;
-    renderPage(page++, res)
+    renderPage(page, res)
   } else if (req.query.command == "page") {
     if (req.query.number > 0) {
       renderPage(req.query.number, res)

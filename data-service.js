@@ -18,6 +18,12 @@ async function fetchData (id) {
     const data = axios.get(api_path);
     return data;
 }
-module.exports = { fetchData }
 
 
+async function fetchCurrentCom () {
+    const api_path = `https://xkcd.com/info.0.json`;
+    const data = axios.get(api_path);
+    console.log(data);
+    return data;
+}
+module.exports = { fetchCurrentCom, fetchData }

@@ -28,17 +28,18 @@
     </div>
     <div class="content-div" id="content">
       <div class="control-div">
-        <div>
+        <div class="page">
           {{#if (isEmpty data.num)}}
           <p>Page: {{data.num}}</p>
           {{/if}}
-          <p>Views: {{views}}</p>
+          <p>Views: {{views}}</p>     
         </div>
-        <div>
-          <button class="button-decor"><a class="arrow left" href='/?command=back'>Prev</a></button>
-          <input checked="active" class="page-number" name="page-number" id="input-box" type="text" onchange='path = "/?number=" + this.value + "&command=page";
-        location.href = path;' placeholder="page">
-          <button class="button-decor"><a class="arrow right" href='/?command=next'>Next</a></button>
+        <button class="random-button-decor"><a class="arrow-random" href='/?command=random'>Random page</a></button>
+        <div class="control-panel">
+          <button class="button-decor"><a class="arrow" href='/?command=back'>Prev</a></button>
+          <p class="search-panel"><input checked="active" class="page-number" name="page-number" id="input-box" type="text" onchange='path = "/?number=" + this.value + "&command=page";
+        location.href = path;' placeholder="page">🔎</p>
+          <button class="button-decor"><a class="arrow" href='/?command=next'>Next</a></button>
         </div>
       </div>
       <div>

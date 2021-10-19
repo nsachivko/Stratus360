@@ -61,7 +61,7 @@ body {
 }
 
 .desc{
-  word-break: break-all;
+  word-wrap: break-word;
 }
 .arrow-random{
   font-weight: bold;
@@ -286,7 +286,7 @@ p{
   }
 
   .desc {
-    word-break: break-all;
+    word-wrap: break-word;
   }
   
   

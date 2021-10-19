@@ -101,11 +101,11 @@ body {
 }
 
 .search-panel{
-  width: 100px;
+  padding: 0px 10px;
+  width: auto;
   margin-top: 10px;
   margin-left: 25px;
   margin-right: 25px;
-  padding: 0;
   border-radius: 5px;
   background-color: white;
 }
@@ -125,6 +125,8 @@ body {
 
 
   .page-number{
+    outline: none;
+    border: none;
    height: 30px;
    width: 50px;
  } 
@@ -245,6 +247,7 @@ p{
   
   
     .page-number{
+      border: none;
      margin-left: 10px;
      margin-right: 10px;
      height: 20px;
